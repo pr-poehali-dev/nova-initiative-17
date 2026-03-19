@@ -1,5 +1,11 @@
 import type { ReactNode } from "react"
 
+export interface PhotoItem {
+  src: string
+  caption: string
+  fullSrc?: string
+}
+
 export interface Section {
   id: string
   title: string
@@ -7,6 +13,10 @@ export interface Section {
   content?: string
   showButton?: boolean
   buttonText?: string
+  type?: 'default' | 'photo' | 'text'
+  photos?: PhotoItem[]
+  year?: string
+  quote?: string
 }
 
 export interface SectionProps extends Section {
